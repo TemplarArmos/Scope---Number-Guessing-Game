@@ -28,7 +28,7 @@ def game_run():
             return 5
     
     # Introduction
-    TARGET_NUMBER = randint(1,101)
+    TARGET_NUMBER = randint(1,100)
     guess_count = intro(TARGET_NUMBER)
     game_running = True
 
