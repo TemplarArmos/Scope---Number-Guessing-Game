@@ -10,6 +10,7 @@ def game_run():
         print("I'm thinking of a number between 1 and 100.")
         print(f"HINT: Its {hint_number}.")
 
+    def determine_difficulty():
         # Choose difficulty, if input does not equal easy or hard keep asking for difficulty.
         checkDifficultLoop = True
         while checkDifficultLoop:
@@ -22,14 +23,18 @@ def game_run():
         # Return number of guesses for the game
         if chosen_difficulty == "easy":
             print("You have chosen easy mode. You will have 10 guess to find the number.")
-            return 10
+            return EASY_TURNS
         elif chosen_difficulty == "hard":
             print("You have chosen hard mode. You will have 5 guess to find the number.")
-            return 5
+            return HARD_TURNS
     
     # Introduction
     TARGET_NUMBER = randint(1,100)
-    guess_count = intro(TARGET_NUMBER)
+    HARD_TURNS = 5
+    EASY_TURNS = 10
+    
+    intro(TARGET_NUMBER)
+    guess_count = determine_difficulty()
     game_running = True
 
     # Player guessing phase
